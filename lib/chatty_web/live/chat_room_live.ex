@@ -11,6 +11,10 @@ defmodule ChattyWeb.ChatRoomLive do
      )}
   end
 
+  def handle_event("send", _params, %{assigns: %{loading: true}} = socket) do
+    {:noreply, socket}
+  end
+
   def handle_event("send", %{"message" => message}, socket) do
     messages = socket.assigns.messages ++ [{:input, message}]
 
@@ -44,8 +48,8 @@ defmodule ChattyWeb.ChatRoomLive do
       </div>
       <div class="border-black border-3 rounded-3xl mt-2 p-2 w-full bg-white">
         <.form for={@form} phx-submit="send" class="flex w-full">
-          <.input field={@form[:message]} class="grow w-full" phx-debounce="2000" />
-          <.button class="flex-none text-xl" phx-debounce="2000">Send</.button>
+          <.input field={@form[:message]} class="grow w-full" />
+          <.button class="flex-none text-xl">Send</.button>
         </.form>
       </div>
     </div>
