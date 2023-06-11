@@ -15,9 +15,10 @@ defmodule Chatty.Application do
       # Start Finch
       {Finch, name: Chatty.Finch},
       # Start the Endpoint (http/https)
-      ChattyWeb.Endpoint
+      ChattyWeb.Endpoint,
       # Start a worker by calling: Chatty.Worker.start_link(arg)
       # {Chatty.Worker, arg}
+      Chatty.Bot
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
