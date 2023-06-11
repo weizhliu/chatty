@@ -6,7 +6,7 @@ defmodule ChattyWeb.ChatRoomLive do
      assign(socket,
        messages: [],
        history: [],
-       form: to_form(%{message: "Hi"}),
+       form: to_form(%{"message" => ""}),
        loading: false
      )}
   end
