@@ -1,0 +1,29 @@
+# fly.toml app configuration file generated for weizhliu-chatty on 2023-06-11T19:42:46+08:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "weizhliu-chatty"
+primary_region = "nrt"
+kill_signal = "SIGTERM"
+
+[env]
+  PHX_HOST = "weizhliu-chatty.fly.dev"
+  PORT = "8080"
+
+[mounts]
+  source="model"
+  destination="/mnt/model"
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  [http_service.concurrency]
+    type = "connections"
+    hard_limit = 1000
+    soft_limit = 1000
+
+
