@@ -1,18 +1,21 @@
 <header>
-  <div class="px-4 sm:px-6 lg:px-8 flex items-center justify-between border-b-3 border-black py-8 text-sm">
+  <div class="bg-yellow-400 px-4 sm:px-6 lg:px-8 flex items-center justify-between border-b-3 border-black py-4 text-sm">
     <div class="flex items-center gap-4">
-      <a href="/" class="font-bold text-3xl">
-        真的有 Open 的 AI Chat 🙃
+      <a href="/" class="font-bold text-4xl font-serif">
+        Chatty 🤖
       </a>
     </div>
     <div class="flex items-center gap-4 font-semibold text-xl leading-6">
-      <a href="https://github.com/phoenixframework/phoenix" class="underline">
+      <a
+        href="https://github.com/weizhliu/chatty"
+        class="border-3 border-black rounded-2xl p-2 hover:bg-white"
+      >
         GitHub
       </a>
     </div>
   </div>
 </header>
-<main class="px-4 py-20 sm:px-6 lg:px-8">
+<main class="px-4 py-12 sm:px-6 lg:px-8">
   <div class="mx-auto max-w-2xl">
     <.flash_group flash={@flash} />
     <%= @inner_content %>
